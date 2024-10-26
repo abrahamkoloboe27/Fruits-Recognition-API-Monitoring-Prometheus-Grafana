@@ -1,0 +1,10 @@
+opencv-python 
+fastapi
+uvicorn
+numpy 
+pandas
+keras
+tensorflow
+plotly
+streamlit
+prometheus-fastapi-instrumentator==1.1.1

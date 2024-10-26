@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 5s  # Intervalle global entre les scrapes
+  evaluation_interval: 5s  # Intervalle d'évaluation des règles
+  
+scrape_configs:
+  - job_name: 'fastapi'  # Nom du job de monitoring
+    metrics_path: /metrics  # Endpoint d'exposition des métriques
+    static_configs:
+      - targets: ['host.docker.internal:8080']  # Adresse de l'API FastAPI
