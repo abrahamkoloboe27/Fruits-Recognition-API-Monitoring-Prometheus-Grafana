@@ -6,4 +6,4 @@ scrape_configs:
   - job_name: 'fastapi'  # Nom du job de monitoring
     metrics_path: /metrics  # Endpoint d'exposition des métriques
     static_configs:
-      - targets: ['host.docker.internal:8080']  # Adresse de l'API FastAPI
+      - targets: ['host.docker.internal:8000']  # Adresse de l'API FastAPI
