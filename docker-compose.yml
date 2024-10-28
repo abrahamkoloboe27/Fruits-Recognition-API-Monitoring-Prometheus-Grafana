@@ -1,11 +1,12 @@
 services:
-  # api : 
-  #   build: ./
-  #   ports:
-  #     - "8080:8080"
-  #   volumes:
-  #     - ./:/app
-  #   command: ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8080"]
+  api : 
+    build: ./
+    ports:
+      - "8000:8000"
+    volumes:
+       - ./:/app
+       - ./temp:/app/temp
+    command: ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
 
   prometheus:
     image: prom/prometheus:latest
@@ -22,6 +23,11 @@ services:
       - "3000:3000"
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+  
+volumes:
+  grafana_data:
 
 networks:
   default:
